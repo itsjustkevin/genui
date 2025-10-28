@@ -8,7 +8,8 @@ on:
 jobs:
   check-sla:
     # Run this job only when the 'status: triaged' label is added
-    if: ${{ github.event.label.name == 'status: triaged' }}
+    if: | 
+        (github.event.label.name == 'status: triaged')
     runs-on: ubuntu-latest
     permissions:
       # Need write privileges to add labels
